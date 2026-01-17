@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-web-app
+  namespace: argocd # ArgoCD usually runs in its own namespace
+spec:
+  project: default
+  source:
+    # In a real setup, this would be your GITHUB URL
+    repoURL: 'https: //github.com/your-username/my-kube-project.git'
+    targetRevision: HEAD
+    path: kubernetes-gitops # The folder where our YAMLs live
+  destination:
+    server: 'https: //kubernetes.default.svc' # Deploy to the same cluster Argo is in
+    namespace: my-app-prod # Deploy our app to this namespace
+  syncPolicy:
+    automated: # This is the "Magic" part
+      prune: true # Delete things in K8s if I delete them in Git
+      selfHeal: true # If someone manually changes K8s, change it back!
+    syncOptions:
+      - CreateNamespace=true # Create the namespace if it doesn't exist
