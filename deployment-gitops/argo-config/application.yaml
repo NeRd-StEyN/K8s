@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/NeRd-StEyN/K8s.git' # Updated to user's repo
+    repoURL: 'https://github.com/NeRd-StEyN/K8s.git'
     targetRevision: HEAD
     path: deployment-gitops/manifests
   destination:
