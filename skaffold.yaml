@@ -11,8 +11,8 @@ build:
         dockerfile: Dockerfile
 manifests:
   rawYaml:
-    - deployment.yaml
-    - service.yaml
+    - deployment-gitops/manifests/deployment.yaml
+    - deployment-gitops/manifests/service.yaml
 deploy:
   kubectl: {}
 portForward:
