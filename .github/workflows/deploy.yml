@@ -10,6 +10,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 👈 Added this to allow the bot to push YAML updates
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
