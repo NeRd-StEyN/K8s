@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: demo-container
-          image: nerdsteyn/kube-demo-app:v3   # 🔗 Docker image used here
+          image: nerdsteyn/kube-demo-app:ec576379f6a2b0b343f612c29ccee2a8aca44cf1
           imagePullPolicy: IfNotPresent  # <--- ADD THIS LINE
           ports:
             - containerPort: 3000
