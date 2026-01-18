@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("hey nipun from  🚀");
+    res.send("teri ma from  🚀");
 });
 
 app.listen(3000, () => {
