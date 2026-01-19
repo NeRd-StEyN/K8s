@@ -1,0 +1,18 @@
+# Default values for demo-app.
+replicaCount: 2
+
+image:
+  repository: nerdsteyn/kube-demo-app
+  tag: "ec576379f6a2b0b343f612c29ccee2a8aca44cf1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 3000
+
+containerPort: 3000
+
+probes:
+  initialDelaySeconds: 2
+  periodSeconds: 3
